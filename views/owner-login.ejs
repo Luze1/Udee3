@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andev Web</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="/style/loginOwner.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+  <div id="custom-wrapper" class="container">
+    <form id="ownerLoginForm" class="p-4">
+      <h2
+        style="border-radius: 36% 64% 85% 15% / 39% 60% 40% 61%; background: linear-gradient(90deg, #ff6babb5, #fdb2d3b5,#fff);">
+        Owner Login</h2>
+      <div id="custom-input-field-username" class="input-field mb-3">
+        <input type="text" id="username" name="username" required>
+        <label for="username">Username/ชื่อผู้ใช้</label>
+      </div>
+      <div id="custom-input-field-password" class="input-field mb-3">
+        <input type="password" id="password" name="password" required>
+        <label for="password">Password/รหัสผ่าน</label>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">
+        <strong>Login</strong>
+        <div id="container-stars">
+          <div id="stars"></div>
+        </div>
+        <div id="glow">
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
+      </button>
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  <script>
+    document.getElementById('username').addEventListener('focus', function () {
+      this.nextElementSibling.textContent = 'Username';
+    });
+
+    document.getElementById('username').addEventListener('blur', function () {
+      if (!this.value) {
+        this.nextElementSibling.textContent = 'Username/ชื่อผู้ใช้';
+      }
+    });
+
+    document.getElementById('password').addEventListener('focus', function () {
+      this.nextElementSibling.textContent = 'Password';
+    });
+
+    document.getElementById('password').addEventListener('blur', function () {
+      if (!this.value) {
+        this.nextElementSibling.textContent = 'Password/รหัสผ่าน';
+      }
+    });
+    
+    document.addEventListener("mousemove", (event) => {
+      let x = event.clientX / window.innerWidth * 200;
+      let y = event.clientY / window.innerHeight * 500;
+
+      document.body.style.background = `linear-gradient(${x}deg, 
+                #FEFBF6, #DAE7E7, #B6D2D5, #8CB9BD, #74A3A7)`;
+    });
+
+    document.getElementById('ownerLoginForm').addEventListener('submit', async function (event) {
+      event.preventDefault();
+      const form = event.target;
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      try {
+        const response = await fetch('/owner-login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: result.message
+          }).then(() => {
+            window.location.href = '/owner';
+          });
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: result.message
+          });
+        }
+      } catch (error) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'An error occurred. Please try again.'
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

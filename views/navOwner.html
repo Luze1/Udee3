@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="/style/navOwner.css">
+<div id="sidebar" class="sidebar collapsed">
+    <button id="toggle-btn" class="toggle-btn">
+        <i class="bx bx-menu"></i>
+    </button>
+
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="bx bx-user"></i>
+                <span>
+                    <%= owner ? owner.username : "Guest" %>
+                </span>
+            </a>
+        </li>
+        <hr>
+
+        <!-- แจ้งค่าบริการ -->
+        <li class="nav-item"><a href="/BillStatus" class="nav-link"><i class="bx bxs-dollar-circle"></i> <span>บิลค่าเช่า</span></a>
+        </li>
+        <hr>
+
+        <li class="nav-item"><a href="/add_dorm" class="nav-link"><i class="bx bx-add-to-queue"></i> <span>เพิ่มข้อมูลหอพัก</span></a>
+        </li>
+
+        <li class="nav-item"><a href="/ownercontact" class="nav-link"><i class="bx bx-wrench"></i> <span>รับแจ้งปัญหา</span></a>
+        </li>
+        <hr>
+
+        <li class="nav-item"><a href="/ReserveRoom" class="nav-link"><i class="bx bx-envelope"></i> <span>สัญญาผู้เช่า</span></a>
+        </li>
+        <li class="nav-item"><a href="/tenentStatus" class="nav-link"><i class="bx bx-user-check"></i> <span>สถานะผู้เช่า</span></a>
+        </li>
+        <hr>
+
+        <li class="nav-item"><a href="/search-history" class="nav-link"><i class="bx bx-history"></i>
+                <span>ดูรายงานและประวัติ</span></a></li>
+        <li class="nav-item"><a href="/logoutOwner" class="nav-link"><i class="bx bx-log-out"></i> <span>ออกจากระบบ</span></a>
+    </ul>
+</div>
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+<script>
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.getElementById('toggle-btn');
+    const mainContent = document.getElementById('main-content');
+
+    toggleBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('collapsed');  
+    
+    const isCollapsed = sidebar.classList.contains('collapsed');
+    const mainContentWidth = isCollapsed ? "100%" : "calc(100% - 220px)"; /* Adjust width based on sidebar */
+    
+    gsap.to("#sidebar", {
+        duration: 0.5,
+        width: isCollapsed ? "80px" : "220px"
+    });
+
+    gsap.to("#main-content", {
+        duration: 0.5,
+        width: mainContentWidth,
+        marginLeft: isCollapsed ? "80px" : "230px"
+    });
+});
+</script>

@@ -1,0 +1,302 @@
+body {
+    font-family: 'Kanit', sans-serif;
+    background-color: #e6f0f3;
+    margin: 0;
+    padding: 0;
+}
+
+.container-outer {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #c5d7de;
+    padding-top: 20px;
+}
+
+.container-inner {
+    width: 100%;
+    max-width: 1200px;
+    background-color: #e0ebf1;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.section-card {
+    width: 97%;
+    background-color: #e0ebf1;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-section {
+    margin-bottom: 20px;
+    position: sticky;
+    top: 20px;
+    z-index: 1000;
+}
+
+.header-section h1 {
+    color: #000;
+    margin: 0;
+    font-size: 18px;
+}
+
+.header-section h2 {
+    color: #000;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.header-section .update-status {
+    color: #000;
+    font-size: 14px;
+}
+
+.status-indicator {
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+/* สถานะบิลต่างๆ */
+.status-indicator.roracham { /* รอชำระ */
+    color: white;
+    background-color: #FF7043; /* สีแดงอ่อน (ตาม .pending) */
+}
+
+.status-indicator.jaiyae { /* จ่ายแล้ว */
+    color: white;
+    background-color: #4CAF50; /* สีเขียว (ตาม .paid) */
+}
+
+.status-indicator.kangjai { /* ค้างจ่าย */
+    color: white;
+    background-color: #D32F2F; /* สีแดงเข้ม (ตาม .overdue) */
+}
+
+.status-indicator.no-data { /* ไม่มีข้อมูล */
+    color: black;
+    background-color: #BDBDBD; /* สีเทา (ตาม .no-data) */
+}
+
+.main-title {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #607d8b;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.bill-details {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.bill-details table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.bill-details th, .bill-details td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #808080;
+}
+
+.bill-details th {
+    background-color: #f0f0f0;
+    color: #000;
+    font-weight: bold;
+}
+
+.bill-details tr {
+    background-color: #fff;
+}
+
+.bill-details tr:last-child {
+    background-color: #f0f0f0;
+}
+
+.bill-details td.amount {
+    text-align: right;
+    font-weight: bold;
+}
+
+.tenant-info {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tenant-info p {
+    margin: 5px 0;
+    color: #000;
+}
+
+.primary-button {
+    padding: 10px 15px;
+    background-color: #6b8eae;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.primary-button:hover {
+    background-color: #557a8d;
+}
+
+/* ปรับให้ UI ตอบสนองต่อขนาดหน้าจอ */
+@media (max-width: 600px) {
+    .bill-details table {
+        font-size: 14px;
+    }
+
+    .bill-details th, .bill-details td {
+        padding: 8px;
+    }
+}
+
+/* CSS ที่ไม่ได้ใช้ใน BillDetail แต่เก็บไว้เพื่อให้ครบตามที่ให้มา */
+.input-field, select {
+    width: 90%;
+    max-width: 600px;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.container {
+    width: 100vw;
+    padding: 20px 0;
+}
+
+.floor-section {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    width: 97%;
+}
+
+.floor-section:nth-child(odd) {
+    background-color: #e0ebf1;
+}
+
+.floor-section:nth-child(even) {
+    background-color: #e0ebf1;
+}
+
+.floor-title {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #607d8b;
+    color: white;
+    border-radius: 5px;
+    text-align: left;
+    display: inline-block;
+    text-decoration: none !important;
+    cursor: pointer;
+}
+
+.floor-title:hover {
+    color: #b37c4b;
+}
+
+.room-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20%;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.room-card {
+    width: 130px;
+    height: 100px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    cursor: pointer;
+    text-decoration: none !important;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.room-card:hover {
+    transform: scale(1.1);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.room-card.kangjai { /* ค้างชำระ */
+    background-color: #D32F2F;
+    color: white;
+}
+
+.room-card.no-data { /* ไม่มีบิล */
+    background-color: #BDBDBD;
+    color: black;
+}
+
+.room-card.incomplete { /* บิลไม่สมบูรณ์ */
+    background-color: #ffcccb;
+    color: #ff0000;
+    border: 1px solid #ff0000;
+}
+
+.room-card.paid { /* รอการตรวจสอบ */
+    background-color: #FF7043;
+    color: white;
+}
+
+.room-card.complete { /* ชำระแล้ว */
+    background-color: #4CAF50;
+    color: white;
+}
+
+.input-field {
+    flex-grow: 1;
+    max-width: 500px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.filter-container select {
+    flex-grow: 1;
+    max-width: 400px;
+}
+
+.filter-container .primary-button {
+    flex-shrink: 0;
+}

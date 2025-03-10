@@ -1,0 +1,174 @@
+/* ✅ ตั้งค่าพื้นฐาน */
+body {
+    font-family: 'Kanit', sans-serif;
+    background-color: #e6f0f3;
+    margin: 0;
+    padding: 0;
+}
+
+/* ✅ จัดโครงสร้างเนื้อหา */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ ส่วนหัว */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c5d7de;
+    padding: 15px 30px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* ✅ โลโก้ */
+.logo-section {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* ✅ ส่วนของ Admin */
+.admin-section {
+    display: flex;
+    align-items: center;
+}
+
+.admin-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-right: 10px;
+}
+
+/* ✅ หัวข้อหลัก */
+.main-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+/* ✅ กล่องเลือกค่า (Dropdown + Input) */
+.selection-container {
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ แถวแต่ละรายการ */
+.selection-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-bottom: 1px solid #979797;
+}
+
+.selection-row:last-child {
+    border-bottom: none;
+}
+
+/* ✅ ปรับปรุงสไตล์ของ Label */
+.selection-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    flex: 1;
+}
+
+/* ✅ ปรับสไตล์ Dropdown และ Input */
+.selection-dropdown, input {
+    flex: 2;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #777777;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+    transition: border 0.3s ease-in-out;
+}
+
+/* ✅ ปรับการโฟกัสให้เด่นขึ้น */
+.selection-dropdown:focus, input:focus {
+    border-color: #b37c4b;
+    outline: none;
+}
+
+/* ✅ ปรับปรุงปุ่ม */
+.action-button {
+    display: block;
+    width: 80%;
+    max-width: 300px;
+    background-color: #dba861;
+    color: #000;
+    text-align: center;
+    padding: 15px;
+    border-radius: 30px;
+    margin: 30px auto;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+/* ✅ เปลี่ยนสีเมื่อ Hover */
+.action-button:hover {
+    background-color: #b37c4b;
+    color: white;
+}
+
+/* ✅ ปรับ Dropdown เมื่อปิดใช้งาน */
+.selection-dropdown:disabled {
+    background-color: #f3e1c7;
+    cursor: not-allowed;
+}
+
+/* ✅ ปรับให้ปุ่ม Dropdown มี icon */
+.selection-dropdown::after {
+    content: "▼";
+    font-size: 14px;
+    color: #666;
+    margin-left: 10px;
+}
+
+/* ✅ ทำให้ UI ตอบสนองต่อขนาดหน้าจอ */
+@media (max-width: 600px) {
+    .selection-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .selection-label {
+        margin-bottom: 5px;
+    }
+
+    .selection-dropdown, input {
+        width: 100%;
+    }
+
+    .action-button {
+        width: 100%;
+    }
+}

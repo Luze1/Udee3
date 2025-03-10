@@ -1,0 +1,97 @@
+body {
+  display: flex;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background: #222;
+  color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding-top: 20px;
+  transition: all 0.3s ease-in-out;
+  overflow: auto;
+  scrollbar-width: none;
+  
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+/* Toggle Button */
+.toggle-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* Nav Links */
+.nav {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.nav li {
+  padding: 10px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  background: #444;
+}
+
+/* Icons */
+.nav i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+/* Hide Text When Collapsed */
+.sidebar.collapsed .nav a span {
+  display: none;
+}
+
+/* Adjust Main Content */
+#main-content {
+  margin-left: 230px;
+  width: 100%;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.collapsed ~ #main-content {
+  margin-left: 70px;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  background-color: #333;
+  border: none;
+}
+
+.dropdown-item {
+  color: white;
+}
+
+.dropdown-item:hover {
+  background-color: #444;
+  color: white;
+}

@@ -1,0 +1,334 @@
+/* กำหนดสไตล์พื้นฐานให้กับหน้าเว็บ */
+body {
+    font-family: 'Kanit', sans-serif; /* ใช้ฟอนต์ Kanit */
+    background-color: #fff; /* พื้นหลังสีขาวตามภาพ */
+    margin: 0; /* ลบ margin เริ่มต้น */
+    padding: 0; /* ลบ padding เริ่มต้น */
+}
+
+/* Container หลักของหน้า */
+.container {
+    width: 100%; /* เปลี่ยนเป็น 100% เพื่อขยายเต็มหน้าจอ */
+    padding: 20px; /* เพิ่ม padding รอบ container */
+    box-sizing: border-box; /* ให้นับ padding อยู่ในความกว้าง */
+}
+
+/* ส่วนหัวแบบคงที่ */
+.header-section {
+    background-color: #f0f0f0; /* สีพื้นหลังสีเทาอ่อน */
+    padding: 10px; /* เพิ่ม padding */
+    border-radius: 5px; /* ขอบมน */
+    margin-bottom: 20px; /* ระยะห่างด้านล่าง */
+    top: 0; /* ติดขอบบน */
+    z-index: 1000; /* อยู่ด้านบนของเนื้อหาอื่น */
+    width: 90%; /* ความกว้าง 90% */
+    box-sizing: border-box; /* ให้นับ padding อยู่ในความกว้าง */
+}
+
+/* หัวข้อระดับ 1 ใน header-section */
+.header-section h1 {
+    color: #000; /* สีตัวอักษรดำ */
+    margin: 0; /* ลบ margin */
+    font-size: 18px; /* ขนาดตัวอักษร */
+}
+
+/* หัวข้อระดับ 2 ใน header-section */
+.header-section h2 {
+    color: #000; /* สีตัวอักษรดำ */
+    margin: 5px 0; /* ระยะห่างด้านบนและล่าง */
+    font-size: 16px; /* ขนาดตัวอักษร */
+}
+
+/* ข้อความสถานะอัพเดท */
+.header-section .update-status {
+    color: #000; /* สีตัวอักษรดำ */
+    font-size: 14px; /* ขนาดตัวอักษร */
+}
+
+/* สไตล์พื้นฐานสำหรับสถานะบิล */
+.status-indicator.chamraelaeo { /* ชำระแล้ว */
+    color: white;
+    background-color: #4CAF50; /* เขียว */
+}
+
+.status-indicator.rot-damnoenkan { /* รอดำเนินการ */
+    color: white;
+    background-color: #FF9800; /* ส้ม */
+}
+
+.status-indicator.kangcham { /* ค้างชำระ */
+    color: white;
+    background-color: #D32F2F; /* แดง */
+}
+
+.status-indicator.no-data { /* ไม่มีข้อมูล */
+    color: #808080;
+    background-color: #BDBDBD; /* เทา */
+}
+
+/* หัวข้อหลักในเนื้อหา */
+.main-title {
+    background-color: #f0f0f0; /* สีพื้นหลังสีเทาอ่อน */
+    color: #000; /* สีตัวอักษรดำ */
+    padding: 10px; /* เพิ่ม padding */
+    text-align: left; /* ข้อความชิดซ้ายตามภาพ */
+    border-radius: 5px; /* ขอบมน */
+    margin-bottom: 20px; /* ระยะห่างด้านล่าง */
+    font-size: 16px; /* ขนาดตัวอักษร */
+    width: 100%; /* ขยายเต็ม */
+    box-sizing: border-box; /* ให้นับ padding อยู่ในความกว้าง */
+}
+
+/* รายละเอียดบิล */
+.bill-details {
+    background-color: #f0f0f0; /* สีพื้นหลังสีเทาอ่อน */
+    padding: 15px; /* เพิ่ม padding */
+    border-radius: 5px; /* ขอบมน */
+    width: 90%; /* ความกว้าง 90% */
+    box-sizing: border-box; /* ให้นับ padding อยู่ในความกว้าง */
+}
+
+.bill-details p {
+    color: #808080;
+    font-size: 16px;
+    text-align: left;
+    margin: 20px 0;
+}
+
+/* ตารางใน bill-details */
+.bill-details table {
+    width: 100%; /* ความกว้างเต็ม */
+    border-collapse: collapse; /* ลบช่องว่างระหว่างเส้นขอบ */
+    margin-top: 15px; /* ระยะห่างด้านบน */
+}
+
+/* เซลล์หัวตารางและข้อมูล */
+.bill-details th, .bill-details td {
+    padding: 12px; /* เพิ่ม padding */
+    text-align: left; /* ชิดซ้าย */
+    border: 1px solid #808080; /* เส้นขอบสีเทาตามภาพ */
+}
+
+/* เซลล์หัวตาราง */
+.bill-details th {
+    background-color: #f0f0f0; /* สีพื้นหลังสีเทาอ่อน */
+    color: #000; /* สีตัวอักษรดำ */
+    font-weight: bold; /* ตัวหนา */
+}
+
+/* แถวในตาราง */
+.bill-details tr {
+    background-color: #fff; /* สีพื้นหลังขาว */
+}
+
+/* แถวสุดท้ายในตาราง */
+.bill-details tr:last-child {
+    background-color: #f0f0f0; /* แถวสุดท้ายสีเทาตามภาพ */
+}
+
+/* เซลล์จำนวนเงิน */
+.bill-details td.amount {
+    text-align: right; /* ชิดขวา */
+    font-weight: bold; /* ตัวหนา */
+}
+
+/* ข้อมูลผู้เช่า */
+.tenant-info {
+    margin-top: 20px; /* ระยะห่างด้านบน */
+    padding: 15px; /* เพิ่ม padding */
+    background-color: #f0f0f0; /* พื้นหลังสีเทาตามภาพ */
+    border-radius: 5px; /* ขอบมน */
+    width: 100%; /* ขยายเต็ม */
+    box-sizing: border-box; /* ให้นับ padding อยู่ในความกว้าง */
+}
+
+/* ข้อความใน tenant-info */
+.tenant-info p {
+    margin: 5px 0; /* ระยะห่างแนวตั้ง */
+    color: #000; /* สีตัวอักษรดำ */
+}
+
+/* ปุ่มดำเนินการ */
+.action-button {
+    display: block;
+    width: 200px;
+    margin: 20px 1%; /* ชิดขวา */
+    padding: 10px 20px;
+    background-color: #d3d3d3;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #808080;
+    border-radius: 5px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+/* เมื่อชี้เมาส์ที่ปุ่ม */
+.action-button:hover {
+    background-color: #c0c0c0; /* เปลี่ยนสีพื้นหลังเมื่อชี้ */
+}
+
+/* ปรับให้ UI ตอบสนองต่อขนาดหน้าจอ */
+@media (max-width: 600px) {
+    /* ปรับขนาดตารางในหน้าจอเล็ก */
+    .bill-details table {
+        font-size: 14px; /* ลดขนาดตัวอักษร */
+    }
+
+    /* ปรับ padding ของเซลล์ในตาราง */
+    .bill-details th, .bill-details td {
+        padding: 8px; /* ลด padding */
+    }
+}
+
+/* CSS ที่ไม่ได้ใช้ใน BillDetail แต่เก็บไว้เพื่อให้ครบตามที่ให้มา */
+.container-outer {
+    width: 100vw; /* ความกว้างเต็มหน้าจอ */
+    min-height: 100vh; /* ความสูงขั้นต่ำเต็มหน้าจอ */
+    display: flex; /* ใช้ flexbox */
+    flex-direction: column; /* วางซ้อนกันแนวตั้ง */
+    align-items: center; /* จัดกึ่งกลางในแนวนอน */
+    background-color: #c5d7de; /* สีพื้นหลัง */
+    padding-top: 20px; /* ระยะห่างด้านบน */
+}
+
+.container-inner {
+    width: 100%; /* ความกว้างเต็ม */
+    max-width: 1200px; /* ความกว้างสูงสุด */
+    background-color: #e0ebf1; /* สีพื้นหลัง */
+    padding: 20px; /* เพิ่ม padding */
+    border-radius: 8px; /* ขอบมน */
+}
+
+.section-card {
+    width: 100%; /* ความกว้างเต็ม */
+    background-color: #e0ebf1; /* สีพื้นหลัง */
+    padding: 20px; /* เพิ่ม padding */
+    border-radius: 8px; /* ขอบมน */
+    text-align: center; /* จัดข้อความกึ่งกลาง */
+    margin-bottom: 20px; /* ระยะห่างด้านล่าง */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+}
+
+.input-field, select {
+    width: 90%; /* ความกว้าง 90% */
+    max-width: 600px; /* ความกว้างสูงสุด */
+    padding: 10px; /* เพิ่ม padding */
+    margin-top: 10px; /* ระยะห่างด้านบน */
+    border: none; /* ลบเส้นขอบ */
+    border-radius: 5px; /* ขอบมน */
+    text-align: center; /* จัดข้อความกึ่งกลาง */
+}
+
+.primary-button {
+    padding: 10px 15px; /* เพิ่ม padding */
+    background-color: #6b8eae; /* สีพื้นหลัง */
+    color: white; /* สีตัวอักษร */
+    border: none; /* ลบเส้นขอบ */
+    border-radius: 5px; /* ขอบมน */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็น pointer */
+}
+
+.primary-button:hover {
+    background-color: #557a8d; /* เปลี่ยนสีพื้นหลังเมื่อชี้ */
+}
+
+.floor-section {
+    margin-top: 20px; /* ระยะห่างด้านบน */
+    padding: 20px; /* เพิ่ม padding */
+    border-radius: 10px; /* ขอบมน */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+}
+
+.floor-section:nth-child(odd) {
+    background-color: #e0ebf1; /* สีพื้นหลังสำหรับชั้นคี่ */
+}
+
+.floor-section:nth-child(even) {
+    background-color: #e0ebf1; /* สีพื้นหลังสำหรับชั้นคู่ */
+}
+
+.floor-title {
+    font-size: 20px; /* ขนาดตัวอักษร */
+    font-weight: bold; /* ตัวหนา */
+    padding: 10px; /* เพิ่ม padding */
+    background-color: #607d8b; /* สีพื้นหลัง */
+    color: white; /* สีตัวอักษร */
+    border-radius: 5px; /* ขอบมน */
+    text-align: left; /* ชิดซ้าย */
+    display: inline-block; /* ให้ยืดหยุ่นตามเนื้อหา */
+    text-decoration: none !important; /* ลบเส้นใต้ */
+}
+
+.room-container {
+    display: flex; /* ใช้ flexbox */
+    flex-wrap: wrap; /* ให้ wrap เมื่อหน้าจอเล็กลง */
+    gap: 20px; /* ระยะห่างระหว่างห้อง */
+    justify-content: flex-start; /* ชิดซ้าย */
+    padding: 20px; /* เพิ่ม padding */
+}
+
+.room-card {
+    width: 130px; /* ความกว้าง */
+    height: 100px; /* ความสูง */
+    border-radius: 10px; /* ขอบมน */
+    text-align: center; /* จัดข้อความกึ่งกลาง */
+    padding: 10px; /* เพิ่ม padding */
+    font-weight: bold; /* ตัวหนา */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+    transition: transform 0.2s; /* เพิ่มแอนิเมชัน */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็น pointer */
+    text-decoration: none !important; /* ลบเส้นใต้ */
+    color: inherit; /* สืบทอดสีจาก parent */
+}
+
+.room-card:hover {
+    transform: scale(1.1); /* ขยายเมื่อชี้ */
+    background-color: rgba(0, 0, 0, 0.1); /* เพิ่มสีพื้นหลังโปร่งใส */
+}
+
+.room-card.paid {
+    background-color: #4CAF50; /* สีเขียวสำหรับสถานะ "จ่ายแล้ว" */
+    color: white; /* สีตัวอักษรขาว */
+}
+
+.room-card.pending {
+    background-color: #FF7043; /* สีส้มสำหรับสถานะ "รอชำระ" */
+    color: white; /* สีตัวอักษรขาว */
+}
+
+.room-card.overdue {
+    background-color: #D32F2F; /* สีแดงสำหรับสถานะ "ค้างจ่าย" */
+    color: white; /* สีตัวอักษรขาว */
+}
+
+.room-card.no-data {
+    background-color: #BDBDBD; /* สีเทาสำหรับ "ไม่มีข้อมูล" */
+    color: black; /* สีตัวอักษรดำ */
+}
+
+.input-field {
+    flex-grow: 1; /* ขยายตามเนื้อหา */
+    max-width: 500px; /* ความกว้างสูงสุด */
+    padding: 10px; /* เพิ่ม padding */
+    border: 1px solid #ccc; /* เส้นขอบ */
+    border-radius: 5px; /* ขอบมน */
+}
+
+.filter-container {
+    display: flex; /* ใช้ flexbox */
+    justify-content: center; /* จัดกึ่งกลางในแนวนอน */
+    align-items: center; /* จัดกึ่งกลางในแนวตั้ง */
+    gap: 10px; /* ระยะห่างระหว่างส่วน */
+    margin-top: 10px; /* ระยะห่างด้านบน */
+}
+
+.filter-container select {
+    flex-grow: 1; /* ขยายตามเนื้อหา */
+    max-width: 400px; /* ความกว้างสูงสุด */
+}
+
+.filter-container .primary-button {
+    flex-shrink: 0; /* ไม่ให้หด */
+}

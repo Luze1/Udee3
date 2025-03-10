@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บิลค่าเช่า</title>
+    <link rel="stylesheet" href="/style/BillStatus.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- Boxicons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/style/navOwner.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body style="background-color: #d4e6e6;">
+    <%- include('navOwner.html') %>
+    <div id="main-content">
+        <div class="container">
+            <!-- SECTION 2: ค้นหาบิลตามสถานะ -->
+            <section class="section-card">
+                <h2 class="section-title">ค้นหาบิล</h2>
+                
+                <div class="filter-container">
+                    <select id="billStatusFilter" class="input-field">
+                        <option value="">เลือกสถานะบิล</option>
+                        <option value="บิลไม่สมบูรณ์">บิลไม่สมบูรณ์</option>
+                        <option value="ค้างชำระ">ค้างชำระ</option>
+                        <option value="รอการตรวจสอบ">รอการตรวจสอบ</option>
+                        <option value="ชำระแล้ว">ชำระแล้ว</option>
+                        <option value="ไม่มีบิล">ไม่มีบิล</option>
+                    </select>
+                    <button id="searchBillBtn" class="primary-button">ค้นหา</button>
+                </div>
+            </section>
+    
+            <!-- SECTION 3: รายการบิล (เหมือน TenentStatus) -->
+            <div class="dropdown-section">
+                <!-- ไม่ต้องมี dropdown เลือกตึกหรือชั้น เพราะ API จะจัดการแยกให้ -->
+            </div>
+    
+            <div id="floors-container">
+                <div class="loading-indicator">กำลังโหลดข้อมูล...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/BillStatus.js"></script>
+</body>
+</html>

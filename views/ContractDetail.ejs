@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายละเอียดสัญญา ห้อง <%= room_id %></title>
+    <link rel="stylesheet" href="/style/ContractDetail.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- Boxicons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/style/navOwner.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <%- include('navOwner.html') %>
+    <div class="no-bootstrap" id="main-content" style="background-color: #d4e6e6;">
+        <div class="container">
+            <div class="header-section">
+                <h1>รายละเอียดสัญญา</h1>
+                <h2>ห้อง <%= room_id %></h2>
+            </div>
+    
+            <div class="bill-details">
+                <% if (contract) { %>
+                    <div class="tenant-info ms-5 mt-3">
+                        <h2 style="text-align: left;">ข้อมูลสัญญา:</h2>
+                        <p><strong>ชื่อผู้เช่า:</strong> <%= contract.tenantFirstName %> <%= contract.tenantLastName %></p>
+                        <p><strong>ตึก:</strong> <%= contract.dormitory_id %></p>
+                        <p><strong>ชั้น:</strong> <%= contract.floor_number %></p>
+                        <p><strong>วันที่เริ่มสัญญา:</strong> <%= contract.contract_start_date %></p>
+                        <p><strong>วันที่สิ้นสุดสัญญา:</strong> <%= contract.contract_end_date %></p>
+                        <p><strong>ระยะเวลาสัญญา:</strong> <%= contract.contract_month %> เดือน</p>
+                        <p><strong>ค่าเช่า:</strong> <%= contract.rent_fee.toLocaleString() %> บาท</p>
+                        <p><strong>เงินประกัน:</strong> <%= contract.warranty.toLocaleString() %> บาท</p>
+                        <p><strong>เลขมิเตอร์ไฟ:</strong> <%= contract.electric_meter_number %></p>
+                        <p><strong>เลขมิเตอร์น้ำ:</strong> <%= contract.water_meter_number %></p>
+                        <p><strong>ค่าไฟต่อหน่วย:</strong> <%= contract.electric_per_unit %> บาท/หน่วย</p>
+                        <p><strong>ค่าน้ำต่อหน่วย:</strong> <%= contract.water_per_unit %> บาท/หน่วย</p>
+                        <p><strong>เงื่อนไขเพิ่มเติม:</strong> <%= contract.extra_condition || 'ไม่มี' %></p>
+                        <p><strong>วันที่เซ็นสัญญา:</strong> <%= contract.contract_sign_date || 'ไม่มีข้อมูล' %></p>
+                    </div>
+    
+                    <a href="/tenentStatus" class="action-button">ปิด</a>
+                <% } else { %>
+                    <p>ไม่พบข้อมูลสัญญาสำหรับห้องนี้</p>
+                    <a href="/tenentStatus" class="action-button">ปิด</a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
